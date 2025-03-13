@@ -1,0 +1,14 @@
+F:\WeightScales\WeightScales\WeightScales\bin\Debug\WeightScales.exe.config
+F:\WeightScales\WeightScales\WeightScales\bin\Debug\WeightScales.exe
+F:\WeightScales\WeightScales\WeightScales\bin\Debug\WeightScales.pdb
+F:\WeightScales\WeightScales\WeightScales\obj\Debug\WeightScales.csproj.AssemblyReference.cache
+F:\WeightScales\WeightScales\WeightScales\obj\Debug\WeightScales.csproj.SuggestedBindingRedirects.cache
+F:\WeightScales\WeightScales\WeightScales\obj\Debug\WeightScales.FormShow.resources
+F:\WeightScales\WeightScales\WeightScales\obj\Debug\WeightScales.InputData.resources
+F:\WeightScales\WeightScales\WeightScales\obj\Debug\WeightScales.ItSetting.resources
+F:\WeightScales\WeightScales\WeightScales\obj\Debug\WeightScales.Properties.Resources.resources
+F:\WeightScales\WeightScales\WeightScales\obj\Debug\WeightScales.csproj.GenerateResource.cache
+F:\WeightScales\WeightScales\WeightScales\obj\Debug\WeightScales.csproj.CoreCompileInputs.cache
+F:\WeightScales\WeightScales\WeightScales\obj\Debug\WeightScales.exe
+F:\WeightScales\WeightScales\WeightScales\obj\Debug\WeightScales.pdb
+F:\WeightScales\WeightScales\WeightScales\obj\Debug\WeightScales.FormAlert.resources
