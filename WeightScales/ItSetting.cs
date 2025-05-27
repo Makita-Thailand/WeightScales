@@ -28,6 +28,7 @@ namespace WeightScales
             db = new DBConnect(this);
             string[] portCom = SerialPort.GetPortNames();
             cbPortSet.Items.AddRange(portCom);
+
             foreach (DataRow item in db.getListLocName().Rows)
             {
                 cbDeviceSet.Items.Add(item[0].ToString());

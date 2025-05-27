@@ -88,10 +88,12 @@ namespace WeightScales
         {
             edUserID.Text = "";
             string _strSecID = edSecID.Text;
+            /*
             foreach (DataRow item in db.getListUserID(_strSecID).Rows)
             {
                 edUserID.Items.Add(item[0].ToString());
             }
+            */
         }
 
         private void btnSetting_Click(object sender, EventArgs e)

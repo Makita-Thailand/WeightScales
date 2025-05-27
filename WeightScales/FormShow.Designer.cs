@@ -55,8 +55,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.edInUserID = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.edInSec = new System.Windows.Forms.Label();
             this.groupLog.SuspendLayout();
             this.gropMonitor.SuspendLayout();
@@ -125,7 +125,7 @@
             this.groupLog.Controls.Add(this.lbConnect);
             this.groupLog.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupLog.ForeColor = System.Drawing.Color.Gray;
-            this.groupLog.Location = new System.Drawing.Point(797, 115);
+            this.groupLog.Location = new System.Drawing.Point(996, 141);
             this.groupLog.Name = "groupLog";
             this.groupLog.Size = new System.Drawing.Size(122, 161);
             this.groupLog.TabIndex = 14;
@@ -138,11 +138,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gropMonitor.Controls.Add(this.tbScales);
-            this.gropMonitor.Font = new System.Drawing.Font("Calibri", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gropMonitor.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gropMonitor.ForeColor = System.Drawing.Color.Gray;
-            this.gropMonitor.Location = new System.Drawing.Point(54, 282);
+            this.gropMonitor.Location = new System.Drawing.Point(29, 322);
             this.gropMonitor.Name = "gropMonitor";
-            this.gropMonitor.Size = new System.Drawing.Size(865, 279);
+            this.gropMonitor.Size = new System.Drawing.Size(1089, 255);
             this.gropMonitor.TabIndex = 15;
             this.gropMonitor.TabStop = false;
             this.gropMonitor.Text = "Monitoring";
@@ -161,13 +161,13 @@
             this.tbScales.Controls.Add(this.lbScales, 1, 1);
             this.tbScales.Controls.Add(this.lbSqlState, 2, 0);
             this.tbScales.Controls.Add(this.lbkg, 2, 1);
-            this.tbScales.Location = new System.Drawing.Point(19, 36);
+            this.tbScales.Location = new System.Drawing.Point(30, 44);
             this.tbScales.Name = "tbScales";
             this.tbScales.RowCount = 3;
-            this.tbScales.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tbScales.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tbScales.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tbScales.Size = new System.Drawing.Size(840, 228);
+            this.tbScales.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tbScales.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tbScales.Size = new System.Drawing.Size(1026, 204);
             this.tbScales.TabIndex = 30;
             // 
             // lbScales
@@ -178,10 +178,10 @@
             this.lbScales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbScales.Font = new System.Drawing.Font("Calibri", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbScales.ForeColor = System.Drawing.Color.Gray;
-            this.lbScales.Location = new System.Drawing.Point(246, 71);
+            this.lbScales.Location = new System.Drawing.Point(300, 43);
             this.lbScales.Name = "lbScales";
             this.lbScales.ReadOnly = true;
-            this.lbScales.Size = new System.Drawing.Size(346, 118);
+            this.lbScales.Size = new System.Drawing.Size(424, 118);
             this.lbScales.TabIndex = 28;
             this.lbScales.Text = "xx.xx";
             this.lbScales.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -193,9 +193,9 @@
             this.lbSqlState.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSqlState.ForeColor = System.Drawing.Color.Gray;
             this.lbSqlState.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbSqlState.Location = new System.Drawing.Point(598, 42);
+            this.lbSqlState.Location = new System.Drawing.Point(730, 14);
             this.lbSqlState.Name = "lbSqlState";
-            this.lbSqlState.Size = new System.Drawing.Size(239, 26);
+            this.lbSqlState.Size = new System.Drawing.Size(293, 26);
             this.lbSqlState.TabIndex = 13;
             this.lbSqlState.Text = "xxxxxxxxx";
             this.lbSqlState.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -204,10 +204,10 @@
             // 
             this.lbkg.AutoSize = true;
             this.lbkg.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbkg.Location = new System.Drawing.Point(605, 68);
+            this.lbkg.Location = new System.Drawing.Point(737, 40);
             this.lbkg.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.lbkg.Name = "lbkg";
-            this.lbkg.Size = new System.Drawing.Size(59, 114);
+            this.lbkg.Size = new System.Drawing.Size(56, 122);
             this.lbkg.TabIndex = 29;
             this.lbkg.Text = "kg.";
             this.lbkg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,14 +215,13 @@
             // edInDev
             // 
             this.edInDev.AutoSize = true;
-            this.edInDev.Dock = System.Windows.Forms.DockStyle.Left;
-            this.edInDev.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edInDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edInDev.ForeColor = System.Drawing.Color.Chocolate;
             this.edInDev.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.edInDev.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.edInDev.Location = new System.Drawing.Point(403, 5);
+            this.edInDev.Location = new System.Drawing.Point(530, 5);
             this.edInDev.Name = "edInDev";
-            this.edInDev.Size = new System.Drawing.Size(63, 46);
+            this.edInDev.Size = new System.Drawing.Size(77, 37);
             this.edInDev.TabIndex = 19;
             this.edInDev.Text = "xxxx";
             this.edInDev.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -230,14 +229,13 @@
             // edInPort
             // 
             this.edInPort.AutoSize = true;
-            this.edInPort.Dock = System.Windows.Forms.DockStyle.Left;
-            this.edInPort.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edInPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edInPort.ForeColor = System.Drawing.Color.Chocolate;
             this.edInPort.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.edInPort.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.edInPort.Location = new System.Drawing.Point(403, 51);
+            this.edInPort.Location = new System.Drawing.Point(530, 51);
             this.edInPort.Name = "edInPort";
-            this.edInPort.Size = new System.Drawing.Size(63, 46);
+            this.edInPort.Size = new System.Drawing.Size(77, 37);
             this.edInPort.TabIndex = 20;
             this.edInPort.Text = "xxxx";
             this.edInPort.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -246,43 +244,44 @@
             // 
             this.edInMin.AutoSize = true;
             this.edInMin.Dock = System.Windows.Forms.DockStyle.Left;
-            this.edInMin.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edInMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edInMin.ForeColor = System.Drawing.Color.Chocolate;
             this.edInMin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.edInMin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.edInMin.Location = new System.Drawing.Point(636, 5);
+            this.edInMin.Location = new System.Drawing.Point(890, 5);
             this.edInMin.Name = "edInMin";
-            this.edInMin.Size = new System.Drawing.Size(111, 46);
+            this.edInMin.Size = new System.Drawing.Size(47, 46);
             this.edInMin.TabIndex = 21;
-            this.edInMin.Text = "xxxxxxxxx";
+            this.edInMin.Text = "xx";
             this.edInMin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // edInMax
             // 
             this.edInMax.AutoSize = true;
             this.edInMax.Dock = System.Windows.Forms.DockStyle.Left;
-            this.edInMax.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edInMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edInMax.ForeColor = System.Drawing.Color.Chocolate;
             this.edInMax.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.edInMax.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.edInMax.Location = new System.Drawing.Point(636, 51);
+            this.edInMax.Location = new System.Drawing.Point(890, 51);
             this.edInMax.Name = "edInMax";
-            this.edInMax.Size = new System.Drawing.Size(111, 46);
+            this.edInMax.Size = new System.Drawing.Size(47, 46);
             this.edInMax.TabIndex = 23;
-            this.edInMax.Text = "xxxxxxxxx";
+            this.edInMax.Text = "xx";
             this.edInMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // edInWC
             // 
             this.edInWC.AutoSize = true;
+            this.edInWC.BackColor = System.Drawing.Color.Transparent;
             this.edInWC.Dock = System.Windows.Forms.DockStyle.Left;
-            this.edInWC.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edInWC.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edInWC.ForeColor = System.Drawing.Color.Chocolate;
             this.edInWC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.edInWC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.edInWC.Location = new System.Drawing.Point(144, 97);
+            this.edInWC.Location = new System.Drawing.Point(141, 97);
             this.edInWC.Name = "edInWC";
-            this.edInWC.Size = new System.Drawing.Size(63, 46);
+            this.edInWC.Size = new System.Drawing.Size(77, 46);
             this.edInWC.TabIndex = 26;
             this.edInWC.Text = "xxxx";
             this.edInWC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,7 +295,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(964, 109);
+            this.panel1.Size = new System.Drawing.Size(1152, 109);
             this.panel1.TabIndex = 27;
             // 
             // btnBackMain
@@ -320,7 +319,7 @@
             this.lbWeightStatus.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbWeightStatus.ForeColor = System.Drawing.SystemColors.Control;
             this.lbWeightStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbWeightStatus.Location = new System.Drawing.Point(744, 26);
+            this.lbWeightStatus.Location = new System.Drawing.Point(932, 26);
             this.lbWeightStatus.Name = "lbWeightStatus";
             this.lbWeightStatus.Size = new System.Drawing.Size(175, 59);
             this.lbWeightStatus.TabIndex = 28;
@@ -342,14 +341,13 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 7;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.13868F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.36225F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.13868F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.36225F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.63589F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.36225F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnCount = 6;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
             this.tableLayoutPanel1.Controls.Add(this.label11, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.edInWC, 1, 2);
@@ -359,137 +357,152 @@
             this.tableLayoutPanel1.Controls.Add(this.edInPort, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.edInDev, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label9, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.edInUserID, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.edInSec, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.edInMin, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.edInSec, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.edInMax, 5, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 120);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(29, 150);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(763, 148);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(961, 148);
             this.tableLayoutPanel1.TabIndex = 28;
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Chocolate;
             this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(526, 51);
+            this.label11.Location = new System.Drawing.Point(767, 51);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(82, 39);
+            this.label11.Size = new System.Drawing.Size(99, 46);
             this.label11.TabIndex = 28;
-            this.label11.Text = "Max:";
+            this.label11.Text = "Max :";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Chocolate;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(267, 5);
+            this.label3.Location = new System.Drawing.Point(378, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 39);
+            this.label3.Size = new System.Drawing.Size(138, 37);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Device:";
+            this.label3.Text = "Device :";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Chocolate;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(267, 51);
+            this.label1.Location = new System.Drawing.Point(378, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 39);
+            this.label1.Size = new System.Drawing.Size(100, 46);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Port:";
+            this.label1.Text = "Port :";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Chocolate;
             this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label13.Location = new System.Drawing.Point(8, 5);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(129, 39);
+            this.label13.Size = new System.Drawing.Size(108, 37);
             this.label13.TabIndex = 29;
-            this.label13.Text = "User ID: ";
+            this.label13.Text = "User :";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Chocolate;
             this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label12.Location = new System.Drawing.Point(8, 51);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(130, 39);
+            this.label12.Size = new System.Drawing.Size(94, 46);
             this.label12.TabIndex = 30;
-            this.label12.Text = "Section: ";
+            this.label12.Text = "Sec :";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Chocolate;
             this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(526, 5);
+            this.label9.Location = new System.Drawing.Point(767, 5);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 39);
+            this.label9.Size = new System.Drawing.Size(91, 37);
             this.label9.TabIndex = 27;
-            this.label9.Text = "Min:";
+            this.label9.Text = "Min :";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // edInUserID
+            // 
+            this.edInUserID.AutoSize = true;
+            this.edInUserID.BackColor = System.Drawing.Color.Transparent;
+            this.edInUserID.Dock = System.Windows.Forms.DockStyle.Left;
+            this.edInUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edInUserID.ForeColor = System.Drawing.Color.Chocolate;
+            this.edInUserID.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.edInUserID.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.edInUserID.Location = new System.Drawing.Point(141, 5);
+            this.edInUserID.Name = "edInUserID";
+            this.edInUserID.Size = new System.Drawing.Size(77, 46);
+            this.edInUserID.TabIndex = 33;
+            this.edInUserID.Text = "xxxx";
+            this.edInUserID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label8
             // 
-            this.label8.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Chocolate;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label8.Location = new System.Drawing.Point(8, 97);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 42);
+            this.label8.Size = new System.Drawing.Size(110, 42);
             this.label8.TabIndex = 26;
-            this.label8.Text = "WC:";
-            // 
-            // edInUserID
-            // 
-            this.edInUserID.AutoSize = true;
-            this.edInUserID.Dock = System.Windows.Forms.DockStyle.Left;
-            this.edInUserID.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edInUserID.ForeColor = System.Drawing.Color.Chocolate;
-            this.edInUserID.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.edInUserID.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.edInUserID.Location = new System.Drawing.Point(144, 5);
-            this.edInUserID.Name = "edInUserID";
-            this.edInUserID.Size = new System.Drawing.Size(63, 46);
-            this.edInUserID.TabIndex = 33;
-            this.edInUserID.Text = "xxxx";
-            this.edInUserID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label8.Text = "WC :";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // edInSec
             // 
             this.edInSec.AutoSize = true;
+            this.edInSec.BackColor = System.Drawing.Color.Transparent;
             this.edInSec.Dock = System.Windows.Forms.DockStyle.Left;
-            this.edInSec.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edInSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edInSec.ForeColor = System.Drawing.Color.Chocolate;
             this.edInSec.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.edInSec.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.edInSec.Location = new System.Drawing.Point(144, 51);
+            this.edInSec.Location = new System.Drawing.Point(141, 51);
             this.edInSec.Name = "edInSec";
-            this.edInSec.Size = new System.Drawing.Size(63, 46);
+            this.edInSec.Size = new System.Drawing.Size(77, 46);
             this.edInSec.TabIndex = 34;
             this.edInSec.Text = "xxxx";
             this.edInSec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -499,7 +512,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(964, 605);
+            this.ClientSize = new System.Drawing.Size(1152, 605);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupLog);

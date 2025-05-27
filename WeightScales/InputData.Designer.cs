@@ -98,6 +98,7 @@
             // edUserID
             // 
             this.edUserID.BackColor = System.Drawing.Color.White;
+            this.edUserID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.edUserID.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edUserID.ForeColor = System.Drawing.Color.Black;
             this.edUserID.FormattingEnabled = true;

@@ -60,6 +60,7 @@ namespace WeightScales
             }
         }
 
+        /*
         public bool executePostWeight(string _vUserID, string _vSec, string _vDev, string _vWC, decimal _vMin, decimal _vMax, string _vW)
         {
             InsertTimeDate = getDateTime();
@@ -166,7 +167,7 @@ namespace WeightScales
             }
         }
 
-
+        */
         private string getDateTime()
         {
             try
@@ -229,7 +230,7 @@ namespace WeightScales
                 throw ex;
             }
         }
-
+        /*
         public DataTable getListUserID(string _value)
         {
             try
@@ -251,6 +252,7 @@ namespace WeightScales
                 throw ex;
             }
         }
+        */
     }
 }
 

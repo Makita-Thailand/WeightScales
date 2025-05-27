@@ -63,6 +63,7 @@ namespace WeightScales
                     serialPortCom.Open();
                     serialPortCom.DiscardInBuffer();  // เคลียร์บัฟเฟอร์ขาเข้า
                     serialPortCom.DiscardOutBuffer(); // เคลียร์บัฟเฟอร์ขาออก
+
                     lbConnect.Text = "Online";
                     lbConnect.BackColor = Color.Lime;
                     lbConnect.ForeColor = Color.Black;
@@ -71,6 +72,7 @@ namespace WeightScales
                     {
                         string sendData = $"MIN:{Properties.Settings.Default.dataMin},MAX:{Properties.Settings.Default.dataMax}";
                         serialPortCom.WriteLine(sendData);
+                        serialPortCom.WriteLine("START");
                         openSystem();
                     }
                 }
@@ -79,18 +81,21 @@ namespace WeightScales
             {
                 Console.WriteLine("Form1_Load_IOException: " + ex.Message);
                 MessageBox.Show("IOException : " + ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                errorSystem();
 
             }
             catch (InvalidOperationException ex)
             {
                 Console.WriteLine("Form1_Load InvalidOperationException: " + ex.Message);
                 MessageBox.Show("Invalid Operation Exception : " + ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                errorSystem();
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Form1_Load Unexpected Error: " + ex.Message);
                 MessageBox.Show("Form1_Load Unexpected Error : " + ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorSystem();
             }
         }
 
@@ -106,16 +111,19 @@ namespace WeightScales
             {
                 Console.WriteLine("IOException: " + ex.Message);
                 MessageBox.Show("IOException : " + ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                errorSystem();
             }
             catch (InvalidOperationException ex)
             {
                 Console.WriteLine("InvalidOperationException: " + ex.Message);
                 MessageBox.Show("Invalid Operation Exception : " + ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                errorSystem();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Unexpected Error: " + ex.Message);
                 MessageBox.Show("Form1_Load Unexpected Error : " + ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorSystem();
             }
         }
 
@@ -124,6 +132,18 @@ namespace WeightScales
             try
             {
                 ed_log.AppendText(data + "\n");
+               
+                if (data.Equals("Paused", StringComparison.OrdinalIgnoreCase))
+                {
+                    bool isFormOpen = Application.OpenForms.OfType<FormAlert>().Any();
+                    if (!isFormOpen)
+                    {
+                        lbWeightStatus.BackColor = Color.Red;
+                        lbWeightStatus.Text = "No Good";
+                        formAlert = new FormAlert();
+                        formAlert.Show();
+                    }
+                }
                 string[] strTemp = data.Split(',');
                 if (strTemp.Length == 2 && !string.IsNullOrWhiteSpace(strTemp[0]) && !string.IsNullOrWhiteSpace(strTemp[1]))
                 {
@@ -138,73 +158,27 @@ namespace WeightScales
                     }
                     lbSqlState.Text = sqlState;
                     lbSqlState.ForeColor = Color.Green;
-                    
-                    if (_strShMoni != "x")
+                    if (_strShMoni.Equals("x", StringComparison.OrdinalIgnoreCase))
                     {
-                        lbScales.Text = _strShMoni;
-                        if ((Convert.ToDecimal(_strShMoni) >= Properties.Settings.Default.dataMin) && 
-                            (Convert.ToDecimal(_strShMoni) <= Properties.Settings.Default.dataMax))
-                        {
-                            if (formAlert != null)
-                            {
-                                formAlert.Close();
-                                formAlert = null;
-                            }
-                            lbWeightStatus.Text = "GOOD";
-                            lbWeightStatus.BackColor = Color.Green;
-                            lbWeightStatus.Width = 59;
-                            lbWeightStatus.Height = 175;
-                            if (count > 5)
-                            {
-                                count = 0;
-                                lbSqlState.Text = "";
-                                bool result = db.executePostWeight(Properties.Settings.Default.dataUserID,
-                                                        Properties.Settings.Default.dataSection,
-                                                        Properties.Settings.Default.dataDevice,
-                                                        Properties.Settings.Default.dataWorkCen,
-                                                        Properties.Settings.Default.dataMin,
-                                                        Properties.Settings.Default.dataMax,
-                                                        _strShMoni);
-                                txt_statusNetwork.Text = result ? "OK" : "ERROR";
-                                if (!result) errorSystem();
-                            }
-                        }
-                        else
-                        {
-                            bool isFormOpen = Application.OpenForms.OfType<FormAlert>().Any();
-                            if (!isFormOpen)
-                            {
-                                lbWeightStatus.BackColor = Color.Red;
-                                lbWeightStatus.Text = "No Good";
-                                formAlert = new FormAlert();
-                                formAlert.Show();
-                            }
-                            // MessageBox.Show("น้ำหนักสิ่งของไม่อยู่ในช่วงที่กำหนด", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
-                    }
-                    else
-                    {
-                        if (formAlert != null)
-                        {
-                            formAlert.Close();
-                            formAlert = null;
-                        }
+                        CloseAlert();
                         lbWeightStatus.BackColor = Color.LightGray;
                         lbWeightStatus.Text = "Normal";
                         lbScales.Text = "xx.xx";
                     }
-
+                    else
+                    {
+                        lbScales.Text = _strShMoni;
+                        CloseAlert();
+                        lbWeightStatus.Text = "GOOD";
+                        lbWeightStatus.BackColor = Color.Green;
+                        lbWeightStatus.Width = 59;
+                        lbWeightStatus.Height = 175;
+                    }
                     if (count > 5)
                     {
                         count = 0;
                         lbSqlState.Text = "";
                     }
-                }
-                else
-                {
-                    lbSqlState.Text = strTemp[0].ToString();
-                    MessageBox.Show("ข้อมูลไม่ถูกต้อง กรุณาติดต่อ IT \n data: " + data);
                 }
             }
             catch (Exception ex)
@@ -221,13 +195,22 @@ namespace WeightScales
 
         private void closeSystem()
         {
-            if (serialPortCom.IsOpen)
+            try
             {
-                serialPortCom.DiscardInBuffer();
-                serialPortCom.DiscardOutBuffer();
-                serialPortCom.Close();
+                if (serialPortCom.IsOpen)
+                {
+                    serialPortCom.DiscardInBuffer();
+                    serialPortCom.DiscardOutBuffer();
+                    serialPortCom.WriteLine("STOP"); // ส่งคำสั่งให้ Arduino หยุด
+                    System.Threading.Thread.Sleep(500); // รอให้ Arduino รับคำสั่ง
+                    serialPortCom.Close();
+                }
+                /* db.closeConnection();*/
             }
-            db.closeConnection();
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error sending STOP command: " + ex.Message);
+            }
         }
 
         private void openSystem()
@@ -238,16 +221,19 @@ namespace WeightScales
                 count = 0;
                 //txt_scale.ForeColor = Color.Aqua;
                 lbScales.ForeColor = Color.Aqua;
-                
+            
+                /*
                 db.openConnection();
                 //Initial Tbl Log
                 db.createNewTablePartition();
+                */
                 serialPortCom.DataReceived += new SerialDataReceivedEventHandler(SerialPortCom_DataReceived);
             }
         }
 
         private void errorSystem()
         {
+            CloseAlert();
             lbSqlState.Text = ".  .  .  .";
             lbSqlState.ForeColor = Color.Red;
             lbScales.Text = "xx.xx";
@@ -270,6 +256,15 @@ namespace WeightScales
         private void FormShow_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void CloseAlert()
+        {
+            if (formAlert != null)
+            {
+                formAlert.Close();
+                formAlert = null;
+            }
         }
     }
 }
